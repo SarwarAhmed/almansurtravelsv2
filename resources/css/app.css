@@ -3,7 +3,13 @@
 @plugin 'tailwindcss-animate';
 
 @source '../views';
+@source '../**/*.jsx';
+@source '../**/*.tsx';
+@source '../**/*.ts';
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
 
 @custom-variant dark (&:is(.dark *));
 

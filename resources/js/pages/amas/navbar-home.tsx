@@ -27,7 +27,7 @@ import { logout } from '@/routes';
 // -------------------------------------------------------------
 
 // If you don't use Inertia, you can change InertiaLink to <a> or your router's Link.
-const Link = InertiaLink as any;
+const Link = InertiaLink;
 
 export type NavItem = { label: string; href: string; external?: boolean };
 
@@ -70,7 +70,12 @@ export default function NavbarHome({
     auth,
     logo = (
         <div className="font-semibold tracking-tight">
-            <span className="text-primary">AL-MANSUR AIR SERVICE</span>
+            <Link href={'/'}>
+                <div className="space-y-0">
+                    <div className="text-2xl font-bold text-indigo-400 dark:text-gray-400">AL-MANSUR</div>
+                    <div className="w-full leading-tight">Al-Mansur Air Service</div>
+                </div>
+            </Link>
         </div>
     ),
     navItems = [
@@ -293,9 +298,9 @@ export default function NavbarHome({
                             <Link href="/login">
                                 <Button variant="ghost">Log in</Button>
                             </Link>
-                            <Link href="/register">
-                                <Button>Sign up</Button>
-                            </Link>
+                            {/*<Link href="/register">*/}
+                            {/*    <Button>Sign up</Button>*/}
+                            {/*</Link>*/}
                         </div>
                     )}
                 </div>
