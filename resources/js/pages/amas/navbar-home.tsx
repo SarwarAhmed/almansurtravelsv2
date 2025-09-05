@@ -1,4 +1,4 @@
-import { Link as InertiaLink } from '@inertiajs/react'; // If not using Inertia, replace with your router's Link
+import { Link as InertiaLink, router } from '@inertiajs/react'; // If not using Inertia, replace with your router's Link
 import { ChevronDown, LogOut, Menu, Moon, Settings, Sun, User } from 'lucide-react';
 import * as React from 'react';
 import { useEffect, useMemo, useState } from 'react';
@@ -15,6 +15,8 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { Separator } from '@/components/ui/separator';
 import { Sheet, SheetClose, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { useMobileNavigation } from '@/hooks/use-mobile-navigation';
+import { logout } from '@/routes';
 
 // -------------------------------------------------------------
 // Responsive Navbar for Laravel + Inertia + React + shadcn/ui
@@ -64,7 +66,7 @@ function ThemeToggle() {
     );
 }
 
-export default function NavbarUpdated({
+export default function NavbarHome({
     auth,
     logo = (
         <div className="font-semibold tracking-tight">
@@ -105,6 +107,13 @@ export default function NavbarUpdated({
                 : 'U',
         [user],
     );
+
+    // logout function
+    const cleanup = useMobileNavigation();
+    const handleLogout = () => {
+        cleanup();
+        router.flushAll();
+    };
 
     return (
         <header className="sticky top-0 z-50 w-full border-b bg-background/70 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -175,9 +184,9 @@ export default function NavbarUpdated({
                                                 </a>
                                             </DropdownMenuItem>
                                             <DropdownMenuItem asChild>
-                                                <a href="/settings" className="flex w-full items-center">
+                                                <Link href={'/settings'} className="flex w-full items-center">
                                                     <Settings className="mr-2 h-4 w-4" /> Settings
-                                                </a>
+                                                </Link>
                                             </DropdownMenuItem>
                                             <DropdownMenuSeparator />
                                             <DropdownMenuItem asChild>
@@ -265,17 +274,17 @@ export default function NavbarUpdated({
                                     </a>
                                 </DropdownMenuItem>
                                 <DropdownMenuItem asChild>
-                                    <a href="/settings" className="flex w-full items-center">
+                                    <Link href={'/settings'} className="flex w-full items-center">
                                         <Settings className="mr-2 h-4 w-4" /> Settings
-                                    </a>
+                                    </Link>
                                 </DropdownMenuItem>
                                 <DropdownMenuSeparator />
                                 <DropdownMenuItem asChild>
-                                    <form method="post" action="/logout" className="w-full">
-                                        <button type="submit" className="flex w-full items-center">
+                                    <Link href={logout()} as="button" className="w-full" onClick={handleLogout}>
+                                        <div className="flex w-full items-center">
                                             <LogOut className="mr-2 h-4 w-4" /> Log out
-                                        </button>
-                                    </form>
+                                        </div>
+                                    </Link>
                                 </DropdownMenuItem>
                             </DropdownMenuContent>
                         </DropdownMenu>
