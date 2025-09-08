@@ -1,3 +1,6 @@
+import TextLink from '@/components/text-link.js';
+import { register } from '@/routes/index.js';
+
 export function Banner() {
     return (
         <>
@@ -10,13 +13,13 @@ export function Banner() {
 
                     <div className="relative z-10 flex h-full flex-col items-center justify-center text-center">
                         <h1 className="mb-4 text-5xl leading-tight font-bold">AL-Mansur Hajj Group</h1>
-                        <p className="mb-8 text-lg text-gray-300">Hajj pre-registration is open</p>
-                        <a
-                            href="#"
-                            className="transform rounded-full bg-yellow-400 px-6 py-2 text-lg font-semibold text-gray-900 transition duration-300 ease-in-out hover:scale-105 hover:bg-yellow-300 hover:shadow-lg"
+                        <p className="mb-4 text-lg text-gray-300">Hajj pre-registration is open</p>
+                        <TextLink
+                            href={register()}
+                            className="transform rounded-full bg-yellow-400 px-6 py-2 text-lg font-semibold text-gray-900 no-underline transition duration-300 ease-in-out hover:scale-105 hover:bg-yellow-300 hover:shadow-lg"
                         >
                             Get Started
-                        </a>
+                        </TextLink>
                     </div>
                 </div>
             </div>

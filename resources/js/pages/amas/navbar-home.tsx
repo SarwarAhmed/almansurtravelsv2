@@ -1,8 +1,9 @@
-import { Link as InertiaLink, router } from '@inertiajs/react'; // If not using Inertia, replace with your router's Link
+import { Link as InertiaLink, router, usePage } from '@inertiajs/react'; // If not using Inertia, 'replace' with your router's Link
 import { ChevronDown, LogOut, Menu, Moon, Settings, Sun, User } from 'lucide-react';
 import * as React from 'react';
 import { useEffect, useMemo, useState } from 'react';
 
+import TextLink from '@/components/text-link';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
 import {
@@ -17,6 +18,7 @@ import { Separator } from '@/components/ui/separator';
 import { Sheet, SheetClose, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { useMobileNavigation } from '@/hooks/use-mobile-navigation';
 import { logout } from '@/routes';
+import type { SharedData } from '@/types';
 
 // -------------------------------------------------------------
 // Responsive Navbar for Laravel + Inertia + React + shadcn/ui
@@ -67,13 +69,13 @@ function ThemeToggle() {
 }
 
 export default function NavbarHome({
-    auth,
+    // auth,
     logo = (
         <div className="font-semibold tracking-tight">
             <Link href={'/'}>
                 <div className="space-y-0">
                     <div className="text-2xl font-bold text-indigo-400 dark:text-gray-400">AL-MANSUR</div>
-                    <div className="w-full leading-tight">Al-Mansur Air Service</div>
+                    <div className="text-xs leading-tight">Al-Mansur Air Service Ltd.</div>
                 </div>
             </Link>
         </div>
@@ -99,6 +101,8 @@ export default function NavbarHome({
         }
     };
 
+    const page = usePage<SharedData>();
+    const { auth } = page.props;
     user = auth?.user;
 
     const initials = useMemo(
@@ -205,11 +209,11 @@ export default function NavbarHome({
                                     </DropdownMenu>
                                 ) : (
                                     <div className="flex items-center gap-2">
-                                        <Link href="/login">
+                                        <TextLink href="{login}">
                                             <Button variant="outline" className="w-full">
                                                 Log in
                                             </Button>
-                                        </Link>
+                                        </TextLink>
                                     </div>
                                 )}
                             </div>
