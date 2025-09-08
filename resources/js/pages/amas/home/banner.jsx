@@ -4,7 +4,7 @@ import { register } from '@/routes/index.js';
 export function Banner() {
     return (
         <>
-            <div className="container mx-auto px-4 py-4">
+            <div className="container mx-auto max-w-7xl px-4 py-4">
                 <div className="relative overflow-hidden rounded-lg bg-gradient-to-r from-purple-600 to-blue-600 text-white md:h-[400px] lg:h-[600px]">
                     <div className="absolute inset-0">
                         <img src="/images/header1.jpg" alt="Background Image" className="h-full w-full object-cover object-center" />

@@ -42,7 +42,7 @@ export default function Carousel() {
     }, []);
 
     return (
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto max-w-7xl px-4 dark:brightness-90">
             <div className="xmax-w-3xl relative container mx-auto mt-3 w-full overflow-hidden rounded-2xl bg-white shadow-lg dark:bg-neutral-900">
                 <div className="relative h-96 rounded-2xl md:h-[500px] lg:h-[600px]">
                     <AnimatePresence initial={false} custom={direction}>
