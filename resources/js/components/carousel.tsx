@@ -15,13 +15,15 @@ const slides = [
         id: 2,
         title: 'AL-MANSUR UMRAH GROUP',
         subtitle: 'The lights never sleep',
-        img: 'https://picsum.photos/id/1015/800/400',
+        // img: 'https://picsum.photos/id/1015/800/400',
+        img: 'https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     },
     {
         id: 3,
         title: 'AIRLINES TICKETS',
         subtitle: 'A walk into tranquility',
-        img: 'https://picsum.photos/id/1019/800/400',
+        // img: 'https://picsum.photos/id/1019/800/400',
+        img: 'https://images.unsplash.com/photo-1728751440193-6dd449484127?q=80&w=1185&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     },
 ];
 

@@ -12,6 +12,26 @@
 @source '../**/*.js';
 
 @custom-variant dark (&:is(.dark *));
+@keyframes infinite-scroll {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); } /* list duplicated -> move half width */
+}
+@keyframes slide-left-infinite {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-100%); }
+}
+.animate-infinite-scroll {
+    animation: infinite-scroll 20s linear infinite;
+}
+.animate-slide-left-infinite {
+    animation: slide-left-infinite 25s linear infinite;
+}
+.animation-pause {
+    animation-play-state: paused;
+}
+.group:hover .group-hover\:animation-pause {
+    animation-play-state: paused;
+}
 
 @theme {
     --font-sans:
