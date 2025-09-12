@@ -8,7 +8,8 @@ const slides = [
         id: 1,
         title: 'AL-MANSUR HAJJ GROUP',
         subtitle: 'Explore the serenity of nature',
-        img: 'https://picsum.photos/id/1018/800/400',
+        // img: 'https://picsum.photos/id/1018/800/400',
+        img: 'https://images.unsplash.com/photo-1591004272853-1462c050dca8?q=80&w=1750&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     },
     {
         id: 2,
@@ -60,7 +61,9 @@ export default function Carousel() {
                     </AnimatePresence>
                     {/* Overlay with title & subtitle */}
                     <div className="absolute inset-0 flex flex-col items-center justify-center px-4 text-center">
-                        <h2 className="text-2xl font-bold text-white drop-shadow-lg md:text-3xl">{slides[index].title}</h2>
+                        <div className="rounded-md border border-white/10 bg-white/15 p-2 dark:border-neutral-800/20">
+                            <h2 className="text-2xl font-bold text-white drop-shadow-lg md:text-5xl">{slides[index].title}</h2>
+                        </div>
                         <p className="text-base text-gray-200 drop-shadow md:text-lg dark:text-gray-300">{slides[index].subtitle}</p>
                     </div>
                 </div>

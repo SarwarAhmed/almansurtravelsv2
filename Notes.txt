@@ -1,0 +1,3 @@
+# Create an Infinite Horizontal Scroll Animation with Tailwind CSS
+https://cruip.com/create-an-infinite-horizontal-scroll-animation-with-tailwind-css/
+https://github.com/cruip/cruip-tutorials/blob/main/logo-carousel/index.html

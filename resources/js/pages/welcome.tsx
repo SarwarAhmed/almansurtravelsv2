@@ -1,6 +1,5 @@
 import Carousel from '@/components/carousel';
 import { HomeLayout } from '@/pages/amas/home-layout';
-import { Banner } from '@/pages/amas/home/banner';
 import { Head } from '@inertiajs/react';
 
 export default function Welcome() {
@@ -12,7 +11,7 @@ export default function Welcome() {
             </Head>
             <HomeLayout />
             <Carousel />
-            <Banner />
+            {/*<Banner />*/}
         </>
     );
 }
