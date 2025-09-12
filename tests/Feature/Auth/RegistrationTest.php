@@ -12,7 +12,7 @@ test('new users can register', function () {
         'name' => 'Test User',
         'email' => 'test@example.com',
         'role' => 'user',
-        'phone_number' => 'phone_number',
+        'phone_number' => '+1234567890',
         'password' => 'password',
         'password_confirmation' => 'password',
     ]);
