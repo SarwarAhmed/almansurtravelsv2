@@ -8,7 +8,6 @@ import TextLink from '@/components/text-link';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import AuthLayout from '@/layouts/auth-layout';
 
 export default function Register() {
@@ -54,17 +53,16 @@ export default function Register() {
                             </div>
 
                             <div className="grid gap-2">
-                                <Label htmlFor="service_type">Service Type</Label>
-                                <Select>
-                                    <SelectTrigger tabIndex={3}>
-                                        <SelectValue placeholder="Select an option" />
-                                    </SelectTrigger>
-                                    <SelectContent>
-                                        <SelectItem value="hajj">Hajj</SelectItem>
-                                        <SelectItem value="umrah">Umrah</SelectItem>
-                                        <SelectItem value="others">Others</SelectItem>
-                                    </SelectContent>
-                                </Select>
+                                <Label htmlFor="phone_number">Phone Number</Label>
+                                <Input
+                                    id="phone_number"
+                                    type="text"
+                                    required
+                                    tabIndex={3}
+                                    autoComplete="phone_number"
+                                    name="phone_number"
+                                    placeholder="+8801712345678"
+                                />
                             </div>
 
                             <div className="grid gap-2">
