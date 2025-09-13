@@ -53,12 +53,25 @@ export default function Register() {
                             </div>
 
                             <div className="grid gap-2">
+                                <Label htmlFor="phone_number">Phone Number</Label>
+                                <Input
+                                    id="phone_number"
+                                    type="text"
+                                    required
+                                    tabIndex={3}
+                                    autoComplete="phone_number"
+                                    name="phone_number"
+                                    placeholder="+8801712345678"
+                                />
+                            </div>
+
+                            <div className="grid gap-2">
                                 <Label htmlFor="password">Password</Label>
                                 <Input
                                     id="password"
                                     type="password"
                                     required
-                                    tabIndex={3}
+                                    tabIndex={4}
                                     autoComplete="new-password"
                                     name="password"
                                     placeholder="Password"
@@ -72,7 +85,7 @@ export default function Register() {
                                     id="password_confirmation"
                                     type="password"
                                     required
-                                    tabIndex={4}
+                                    tabIndex={5}
                                     autoComplete="new-password"
                                     name="password_confirmation"
                                     placeholder="Confirm password"
@@ -80,7 +93,7 @@ export default function Register() {
                                 <InputError message={errors.password_confirmation} />
                             </div>
 
-                            <Button type="submit" className="mt-2 w-full" tabIndex={5}>
+                            <Button type="submit" className="mt-2 w-full" tabIndex={6}>
                                 {processing && <LoaderCircle className="h-4 w-4 animate-spin" />}
                                 Create account
                             </Button>

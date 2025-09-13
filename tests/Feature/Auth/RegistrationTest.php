@@ -7,9 +7,12 @@ test('registration screen can be rendered', function () {
 });
 
 test('new users can register', function () {
+    $this->withoutExceptionHandling();
     $response = $this->post(route('register.store'), [
         'name' => 'Test User',
         'email' => 'test@example.com',
+        'role' => 'user',
+        'phone_number' => '+1234567890',
         'password' => 'password',
         'password_confirmation' => 'password',
     ]);
