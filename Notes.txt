@@ -2,15 +2,13 @@
 https://cruip.com/create-an-infinite-horizontal-scroll-animation-with-tailwind-css/
 https://github.com/cruip/cruip-tutorials/blob/main/logo-carousel/index.html
 
-Umrah Package
-umrah_packages_tables
+Umrah Package: umrah_packages_tables
 flight_date
 return_date
-from_city
-to_city
+flight_airport
+return_airport
 price
 package_name
 package_description
 package_image
-package_id
 package_status
