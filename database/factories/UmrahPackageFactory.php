@@ -15,13 +15,13 @@ class UmrahPackageFactory extends Factory
         return [
             'flight_date' => Carbon::now(),
             'return_date' => Carbon::now(),
-            'from_city' => $this->faker->city(),
-            'to_city' => $this->faker->city(),
+            'flight_airport' => $this->faker->word(),
+            'return_airport' => $this->faker->word(),
             'price' => $this->faker->word(),
             'package_name' => $this->faker->name(),
             'package_description' => $this->faker->text(),
             'package_image' => $this->faker->word(),
-            'package_status' => $this->faker->word(),
+            'package' => $this->faker->word(),
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ];
