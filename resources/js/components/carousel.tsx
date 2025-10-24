@@ -48,19 +48,21 @@ export default function Carousel() {
         <div className="container mx-auto max-w-7xl px-4 dark:brightness-90">
             <div className="xmax-w-3xl relative container mx-auto mt-3 w-full overflow-hidden rounded-2xl bg-white shadow-lg dark:bg-neutral-900">
                 <div className="relative h-96 rounded-2xl md:h-[500px] lg:h-[600px]">
-                    <AnimatePresence initial={false} custom={direction}>
-                        <motion.img
-                            key={slides[index].id}
-                            src={slides[index].img}
-                            alt={slides[index].title}
-                            custom={direction}
-                            initial={{ x: direction > 0 ? 300 : -300, opacity: 0 }}
-                            animate={{ x: 0, opacity: 1 }}
-                            exit={{ x: direction > 0 ? -300 : 300, opacity: 0 }}
-                            transition={{ duration: 0.6 }}
-                            className="absolute h-full w-full object-cover"
-                        />
-                    </AnimatePresence>
+                    <div className="dark:opacity-75">
+                        <AnimatePresence initial={false} custom={direction}>
+                            <motion.img
+                                key={slides[index].id}
+                                src={slides[index].img}
+                                alt={slides[index].title}
+                                custom={direction}
+                                initial={{ x: direction > 0 ? 300 : -300, opacity: 0 }}
+                                animate={{ x: 0, opacity: 1 }}
+                                exit={{ x: direction > 0 ? -300 : 300, opacity: 0 }}
+                                transition={{ duration: 0.6 }}
+                                className="absolute h-full w-full object-cover"
+                            />
+                        </AnimatePresence>
+                    </div>
                     {/* Overlay with title & subtitle */}
                     <div className="absolute inset-0 flex flex-col items-center justify-center px-4 text-center">
                         <div className="rounded-md border border-white/10 bg-white/15 p-2 dark:border-neutral-800/20">

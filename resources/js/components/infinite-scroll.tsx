@@ -49,6 +49,7 @@ export function InfiniteScroll() {
         ThaiAirways,
         TurkishAirlines,
         Vistar,
+        Vistar,
     ];
 
     return (
@@ -57,7 +58,7 @@ export function InfiniteScroll() {
             <div className="group inline-flex w-full flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]">
                 <ul className="group-hover:animation-pause animate-infinite-scroll hover:animation-pause flex items-center justify-center md:justify-start [&_img]:max-w-none [&_li]:mx-8">
                     {airlines.map((Airline, index) => (
-                        <div key={index} className="mb-10 h-20 bg-white/40">
+                        <div key={index} className="mb-10 h-20 bg-white/40 dark:bg-gray-800">
                             <Airline />
                         </div>
                     ))}

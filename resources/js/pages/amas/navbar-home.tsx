@@ -256,11 +256,11 @@ export default function NavbarHome({
                 {/* Right side (desktop) */}
                 <div className="ml-2 hidden items-center gap-2 md:flex">
                     <ThemeToggle />
-                    {cta ? (
-                        <Link href={cta.href}>
-                            <Button className="rounded-2xl">{cta.label}</Button>
-                        </Link>
-                    ) : null}
+                    {/*{cta ? (*/}
+                    {/*    <Link href={cta.href}>*/}
+                    {/*        <Button className="rounded-2xl">{cta.label}</Button>*/}
+                    {/*    </Link>*/}
+                    {/*) : null}*/}
                     <Separator orientation="vertical" className="mx-1 h-6" />
                     {user ? (
                         <DropdownMenu>
@@ -300,7 +300,13 @@ export default function NavbarHome({
                     ) : (
                         <div className="flex items-center gap-2">
                             <Link href="/login">
-                                <Button variant="ghost">Log in</Button>
+                                <div>
+                                    {cta ? (
+                                        <Link href={cta.href}>
+                                            <Button className="w-full">{cta.label}</Button>
+                                        </Link>
+                                    ) : null}
+                                </div>
                             </Link>
                             {/*<Link href="/register">*/}
                             {/*    <Button>Sign up</Button>*/}
