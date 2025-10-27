@@ -1,5 +1,6 @@
 import Carousel from '@/components/carousel';
 import { InfiniteScroll } from '@/components/infinite-scroll';
+import OurServices from '@/components/OurServices';
 import { HomeLayout } from '@/pages/amas/home-layout';
 import { Head } from '@inertiajs/react';
 
@@ -13,6 +14,7 @@ export default function Welcome() {
             <HomeLayout />
             <Carousel />
             <InfiniteScroll />
+            <OurServices />
         </>
     );
 }
